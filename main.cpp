@@ -2,9 +2,11 @@
 #include <string>
 
 class Account{
+  private:
+    std::string user{""};
+    int balance{0};
+    
   public:
-  std::string user{""};
-  int balance{0};
   Account(){};
   Account(std::string user, int balance){
     user = user;
@@ -20,11 +22,17 @@ class Account{
     balance += num;
     std::cout<<"Your balance is:"<<balance<<std::endl;
   };
+  int getBalance(){
+    return balance;
+  };
+  std::string getName(){
+    return user;
+  };
 };
 
 int main() {
   Account jonathan(std::string{"Jonathan"},1000);
   std::cout << "Hello World!\n";
 
-  
+
 }
