@@ -3,16 +3,16 @@
 
 class Account{
   private:
-    std::string user{""};
-    int balance{0};
-    
+    std::string user;
+    int balance;
+
   public:
-  Account(){};
-  Account(std::string user, int balance){
-    user = user;
-    balance = balance;
+  Account(std::string user="BlankUser", int balance=0)
+    :balance{balance},user{user}
+    {
     std::cout<<"Your name is "<<user<<" and your balance is "<<balance<<"."<<std::endl;
   };
+
 
   void withdraw(int num){
     balance -= num;
@@ -31,7 +31,7 @@ class Account{
 };
 
 int main() {
-  Account jonathan(std::string{"Jonathan"},1000);
+  Account blankuser;
   std::cout << "Hello World!\n";
 
 
